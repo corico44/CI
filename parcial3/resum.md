@@ -1,11 +1,11 @@
 INDEX
 ======
-+ [**Tema 6: A/D**](#conversors-ad)
-  + [Conversors A/D](#conversors-ad)
++ [**Tema 6: A/D**](#conversors-ad-adc)
+  + [Conversors A/D](#conversors-ad-adc)
   + [Versio FLASH](#versio-flash)
   + [Digit to analog converter (DAC)](#da-digit-to-analog-converter---dac)
-  + [A/D barat (aproximacio successiva)](#ad-barat-aproximacio-successiva)
-  + [A/D per cerca dicotomica (aproximacio logaritmica)](#ad-per-cerca-dicotomica-aproximacio-logaritmica)
+  + [A/D barat](#ad-barat)
+  + [A/D per cerca dicotomica (aproximacio successiva)](#ad-per-cerca-dicotomica-aproximacio-successiva)
   + [Temps de conversio](#temps-de-conversio)
   + [Cada quan he de convertir?](#cada-quant-temps-he-de-convertir)
       + [Teorema de Fourier](#teorema-de-fourier)
@@ -17,12 +17,20 @@ INDEX
 
 
 # **Tema 6:** A/D
-## Conversors A/D
+## Conversors A/D (ADC)
 
 ![concepto de conversion](https://github.com/GarJor/CI/blob/master/Utilidades/conept.png)
 
 - **Vref:** Entre que i que anira la meva senyal
 - **Conversion order:** He de dir quan he de convertir. Permet programar cada quan he de convertir una mostra per a que sigui ben interpretada
+
++ El Pic18 te un ADC de 10 bits [d'aproximacio successiva](#ad-per-cerca-dicotomica-aproximacio-successiva).
+També conté els següents registres:
+    + A/D Result High Register ([ADRESH](#adcon0-register))
+    + A/D Result Low Register ([ADRESL](#adcon0-register))
+    + A/D Control Register 0 ([ADCON0](#adcon0-register)) (source selection)
+    + A/D Control Register 1 ([ADCON1](#adcon1-register)) (reference selection)
+    + A/D Control Register 2 ([ADCON2](#adcon2-register)) (timing selections)  
 
 ## Versio FLASH
 ![versio flash](https://github.com/GarJor/CI/blob/master/Utilidades/flash.png)
@@ -41,7 +49,7 @@ INDEX
 
 - Cada bit de menor pes aporta menys voltatge a la sortida que els d'un pes més gran, ja que passa per mes resistencies. Cada bit te la meitat de pes del seguent.
 
-## A/D barat (aproximacio successiva)
+## A/D barat
 
 ![aproximacio barata](https://github.com/GarJor/CI/blob/master/Utilidades/DAbarat.png)
 
@@ -54,7 +62,7 @@ INDEX
 
 > Un cop el condensador esta carregat s'obre l'interruptor per evitar que el valor del Vin canvii.
 
-## A/D per cerca dicotomica (aproximacio logaritmica)
+## A/D per cerca dicotomica (aproximacio successiva)
 
 ![aproximacio successiva](https://github.com/GarJor/CI/blob/master/Utilidades/seccesiveaproach.png)
 
@@ -88,6 +96,13 @@ INDEX
  #### Teorema de l'Enginyer
  + f<sub>mostreig</sub> = 10 * f<sub>max senyal</sub> 
  
- 
- 
+ ### Annexos Tema 6:
+ #### ADCON0 register
+ ![ADCON0](https://github.com/GarJor/CI/blob/master/Utilidades/ADCON0.png)
+ #### ADCON1 register
+ ![ADCON1](https://github.com/GarJor/CI/blob/master/Utilidades/ADCON1.png)
+ #### ADCON2 register
+ ![ADCON2](https://github.com/GarJor/CI/blob/master/Utilidades/ADCON2.png)
+ ## Result Format (ADRESH | ADRESL)
+  ![Result Format](https://github.com/GarJor/CI/blob/master/Utilidades/resultFormat.png)
  # **Tema 7:** Comunicacio serie
