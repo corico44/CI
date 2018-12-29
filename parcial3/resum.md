@@ -32,6 +32,9 @@ També conté els següents registres:
     + A/D Control Register 0 ([ADCON0](#adcon0-register)) (source selection)
     + A/D Control Register 1 ([ADCON1](#adcon1-register)) (reference selection)
     + A/D Control Register 2 ([ADCON2](#adcon2-register)) (timing selections)  
+> A més també haurem de tenir en compte els parametres:
+> + ANSELX per a la configuració de pins
+> + ADIF, ADIE i ADIP per a la AD interrupt  
 
 ## Versio FLASH
 ![versio flash](https://github.com/GarJor/CI/blob/master/Utilidades/flash.png)
