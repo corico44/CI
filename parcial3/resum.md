@@ -1,3 +1,5 @@
+[Versio FLASH](#versio-flash)
+
 Conversors A/D
 ===================
 
@@ -30,9 +32,18 @@ Conversors A/D
 - Cada vegada que s'augmenta el comptador (SAR) i es compara (la seva conversio a analogic) amb el valor analògic, si el valor analogic es més gran es suma 1 al comptador i es torna a comparar fins que el valor del comptador (en analog.) sigui = al valor analogic.
 - Em dona el valor dels 10 bits.
 - Trigara mes o menys en funcio del volts que hi cardis
+- La caixeta S/H es un circuit **Sample & Hold**, i serveix per evitar que el valor analogic canvii mentre encara no ha acabat la conversio:
+
+![sample/hold](https://github.com/GarJor/CI/blob/master/Utilidades/sample&hold.png)
+
+> Un cop el condensador esta carregat sobre l'interruptor per evitar que el valor del Vin canvii.
 
 ### A/D per cerca dicotomica (aproximacio logaritmica)
 
 ![aproximacio successiva](https://github.com/GarJor/CI/blob/master/Utilidades/seccesiveaproach.png)
 
 - Vaig poant uns succesivament, si el comptador em dona 1 es que el nombre esta ben col·locat. Si no, se'l canvia. Demanara el valor correcte dels 10 bits
+> el Vin tambe compta amb un circuit S/H 
+
+### Temps de conversio
+
