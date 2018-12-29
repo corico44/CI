@@ -2,8 +2,8 @@ INDEX
 ======
 + [Conversors A/D](#conversors-ad)
 + [Versio FLASH](#versio-flash)
-+ [Digit to analog converter (DAC)](d`/a-(digit-to-analog-converter-->-dac))
-+ [A/D barat (aproximacio successiva)](a`/d-barat-(aproximacio-successiva))
++ [Digit to analog converter (DAC)](da-(digit-to-analog-converter-->-dac))
++ [A/D barat (aproximacio successiva)](ad-barat)
 + [A/D per cerca dicotomica (aproximacio logaritmica)](a`/d-per-cerca-dicotomica-(aproximacio-logaritmica))
 + [Temps de conversio](#temps-de-conversio)
 
