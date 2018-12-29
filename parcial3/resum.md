@@ -56,7 +56,7 @@ INDEX
 
 ## Temps de conversio
 
-+ Dos fases:
++ Es el temps desde que entra una dada fins que acaba la seva conversió. Hi ha dos fases:
   1. *Sampling*
   2. *Convert*
   
@@ -64,3 +64,17 @@ INDEX
 + **Convert:** Per al PIC18F45K22 assumirem l'esquema d'aproximacio logaritmica, segons el qual haura de pasar per cada un dels bit i comprovar que el valor sigui correcte o no, per tant tindrem:
     
     **1** (inicial) + **10** (bits) + **1** (final) = **12** clocks (*A/D te el seu propi temps de clock*) 
+    
+ ## Cada quant temps he de convertir?
+ 
+ #### Teorema de Fourier
+ ![teorema fourier](https://github.com/GarJor/CI/blob/master/Utilidades/fourier.png)
+ + Qualsevol funcio temporal es pot expressar com una suma de funcions sinusoïdals i cosinusoidals.
+ > Aixo en permet veure quines freqüencies te la teva señal.
+ 
+ > **Teorema de Fourier** permet evitar el problema del canvi de fase
+ 
+ #### Teorema de Shannon-Nyquist
+ + f<sub>mostreig</sub> > 2 * f<sub>max senyal</sub> 
+ #### Teorema de l'Enginyer
+ + f<sub>mostreig</sub> = 10 * f<sub>max senyal</sub> 
