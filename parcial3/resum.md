@@ -1,12 +1,22 @@
 INDEX
 ======
-+ [Conversors A/D](#conversors-ad)
-+ [Versio FLASH](#versio-flash)
-+ [Digit to analog converter (DAC)](#da-digit-to-analog-converter---dac)
-+ [A/D barat (aproximacio successiva)](#ad-barat-aproximacio-successiva)
-+ [A/D per cerca dicotomica (aproximacio logaritmica)](#ad-per-cerca-dicotomica-aproximacio-logaritmica)
-+ [Temps de conversio](#temps-de-conversio)
++ [**Tema 6: A/D**](#conversors-ad)
+  + [Conversors A/D](#conversors-ad)
+  + [Versio FLASH](#versio-flash)
+  + [Digit to analog converter (DAC)](#da-digit-to-analog-converter---dac)
+  + [A/D barat (aproximacio successiva)](#ad-barat-aproximacio-successiva)
+  + [A/D per cerca dicotomica (aproximacio logaritmica)](#ad-per-cerca-dicotomica-aproximacio-logaritmica)
+  + [Temps de conversio](#temps-de-conversio)
+  + [Cada quan he de convertir?](#cada-quant-temps-he-de-convertir)
+      + [Teorema de Fourier](#teorema-de-fourier)
+      + [Teorema de Sannon-Nyquist](#teorema-de-shannon-nyquist)
+      + [Teorema de l'Enginyer](#teorema-de-lenginyer)
++ [**Tema 7: Comunicacio serie**](#)
 
+
+
+
+# Tema 6: A/D
 ## Conversors A/D
 
 ![concepto de conversion](https://github.com/GarJor/CI/blob/master/Utilidades/conept.png)
