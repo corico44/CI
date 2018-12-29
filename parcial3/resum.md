@@ -10,9 +10,10 @@ Conversors A/D
 ![versio flash](https://github.com/GarJor/CI/blob/master/Utilidades/flash.png)
 
 > - **Comparador:** Dona 1 si Analog Input > el que surt de la resistencia, es a dir, si Vin+ > Vin- .
-> - **Vref+ = VDD       Vref- = GND** .
+> - **Decoder:** Retorna un valor de 10 bits. Aquest valor permet saber on està el **tall** (el punt en el 'Digital Thermometer Code' que es pasa del 0 al 1)
+> - **Ref+ = VDD **  **Ref- = GND** (si el voltatge va de 0 a 5).
 
-Els 10 bits ens permeten saber on esta el **tall** (el punt en el 'Digital Thermometer Code' que es pasa del 0 al 1)
+
 
 
 
@@ -20,15 +21,16 @@ Els 10 bits ens permeten saber on esta el **tall** (el punt en el 'Digital Therm
 
 ![versio flash](https://github.com/GarJor/CI/blob/master/Utilidades/DAconverter.png)
 
-- Cada bit de menor pes */* menys voltatge a la sortida. Cada bit te la meitat de pes del seguent.
+- Cada bit de menor pes aporta menys voltatge a la sortida que els d'un pes més gran, ja que passa per mes resistencies. Cada bit te la meitat de pes del seguent.
 
 ### A/D barat (aproximacio successiva)
-![aproximacio successiva](https://github.com/GarJor/CI/blob/master/Utilidades/seccesiveaproach.png)
 
-- Cada vegada que s'augmenta el comptador (**succesive aproximation register**) es compara i es torna a comparar fins que el valor del comptador es el valor que ha comptat.
+
+- Cada vegada que s'augmenta el comptador i es compara (la seva conversio a analogic) amb el valor analògic, si el valor analogic es més gran es suma 1 al comptador i es torna a comparar fins que el valor del comptador (en analog.) sigui = al valor analogic.
 - Em dona el valor dels 10 bits.
 - Trigara mes o menys en funcio del volts que hi cardis
 
 ### A/D per cerca dicotomica (aproximacio logaritmica)
+![aproximacio successiva](https://github.com/GarJor/CI/blob/master/Utilidades/seccesiveaproach.png)
 
 - Vaig poant uns succesivament, si el comptador em dona 1 es que el nombre esta ben col·locat. Si no, se'l canvia. Demanara el valor correcte dels 10 bits
