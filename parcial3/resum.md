@@ -11,6 +11,7 @@ INDEX
       + [Teorema de Fourier](#teorema-de-fourier)
       + [Teorema de Sannon-Nyquist](#teorema-de-shannon-nyquist)
       + [Teorema de l'Enginyer](#teorema-de-lenginyer)
+  + [Annexos Tema 6](#annexos-tema-6)
 + [**Tema 7: Comunicacio serie**](#tema-7-comunicacio-serie)
 
 
@@ -26,8 +27,8 @@ INDEX
 
 + El Pic18 te un ADC de 10 bits [d'aproximacio successiva](#ad-per-cerca-dicotomica-aproximacio-successiva).
 També conté els següents registres:
-    + A/D Result High Register ([ADRESH](#adcon0-register))
-    + A/D Result Low Register ([ADRESL](#adcon0-register))
+    + A/D Result High Register ([ADRESH](#result-format-adresh--adresl))
+    + A/D Result Low Register ([ADRESL](#result-format-adresh--adresl))
     + A/D Control Register 0 ([ADCON0](#adcon0-register)) (source selection)
     + A/D Control Register 1 ([ADCON1](#adcon1-register)) (reference selection)
     + A/D Control Register 2 ([ADCON2](#adcon2-register)) (timing selections)  
@@ -96,13 +97,13 @@ També conté els següents registres:
  #### Teorema de l'Enginyer
  + f<sub>mostreig</sub> = 10 * f<sub>max senyal</sub> 
  
- ### Annexos Tema 6:
- #### ADCON0 register
+ ## Annexos Tema 6:
+ ### ADCON0 register
  ![ADCON0](https://github.com/GarJor/CI/blob/master/Utilidades/ADCON0.png)
- #### ADCON1 register
+ ### ADCON1 register
  ![ADCON1](https://github.com/GarJor/CI/blob/master/Utilidades/ADCON1.png)
- #### ADCON2 register
+ ### ADCON2 register
  ![ADCON2](https://github.com/GarJor/CI/blob/master/Utilidades/ADCON2.png)
- ## Result Format (ADRESH | ADRESL)
+ ### Result Format (ADRESH | ADRESL)
   ![Result Format](https://github.com/GarJor/CI/blob/master/Utilidades/resultFormat.png)
  # **Tema 7:** Comunicacio serie
