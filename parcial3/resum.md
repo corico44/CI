@@ -36,7 +36,7 @@ INDEX
 
 
 ## D/A (digit to analog converter -> DAC)
-
+![versio flash](https://github.com/GarJor/CI/blob/master/Utilidades/DAC.png)
 ![versio flash](https://github.com/GarJor/CI/blob/master/Utilidades/DAconverter.png)
 
 - Cada bit de menor pes aporta menys voltatge a la sortida que els d'un pes més gran, ja que passa per mes resistencies. Cada bit te la meitat de pes del seguent.
@@ -71,6 +71,7 @@ INDEX
   2. *Convert*
   
 + **Sampling:** Cal calcular-ho. Hem de saber quan triga a carregarse el condensador per a que no ens dongui error.
+![sampling time](https://github.com/GarJor/CI/blob/master/Utilidades/sampleTime.png)
 + **Convert:** Per al PIC18F45K22 assumirem l'esquema d'aproximacio logaritmica, segons el qual haura de pasar per cada un dels bit i comprovar que el valor sigui correcte o no, per tant tindrem:
     
     **1** (inicial) + **10** (bits) + **1** (final) = **12** clocks (*A/D te el seu propi temps de clock*) 
