@@ -11,12 +11,12 @@ INDEX
       + [Teorema de Fourier](#teorema-de-fourier)
       + [Teorema de Sannon-Nyquist](#teorema-de-shannon-nyquist)
       + [Teorema de l'Enginyer](#teorema-de-lenginyer)
-+ [**Tema 7: Comunicacio serie**](#)
++ [**Tema 7: Comunicacio serie**](#tema-7-comunicacio-serie)
 
 
 
 
-# Tema 6: A/D
+# **Tema 6:** A/D
 ## Conversors A/D
 
 ![concepto de conversion](https://github.com/GarJor/CI/blob/master/Utilidades/conept.png)
@@ -81,10 +81,12 @@ INDEX
  ![teorema fourier](https://github.com/GarJor/CI/blob/master/Utilidades/fourier.png)
  + Qualsevol funcio temporal es pot expressar com una suma de funcions sinusoïdals i cosinusoidals.
  > Aixo en permet veure quines freqüencies te la teva señal.
- 
- > **Teorema de Fourier** permet evitar el problema del canvi de fase
- 
+  
  #### Teorema de Shannon-Nyquist
  + f<sub>mostreig</sub> > 2 * f<sub>max senyal</sub> 
  #### Teorema de l'Enginyer
  + f<sub>mostreig</sub> = 10 * f<sub>max senyal</sub> 
+ 
+ 
+ 
+ # **Tema 7:** Comunicacio serie
