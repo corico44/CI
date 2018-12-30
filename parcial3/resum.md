@@ -113,7 +113,7 @@ També conté els següents registres:
  ![Result Format](https://github.com/GarJor/CI/blob/master/Utilidades/resultFormat.png)
  # **Tema 7:** Comunicació serie
  ## Comunicació en sèrie
- ![serial chronogram](https://github.com/GarJor/CI/blob/master/Utilidades/serialchronogram.png)
+ ![serial comunication](https://github.com/GarJor/CI/blob/master/Utilidades/serialcomunication.png)
  + S'utilitza un *shift register* (un registre que envia bits un a un) connectat a un altre *shift register*
  + Cal sincronitzar el clock:
     - Amb cable --> **Síncrona**
@@ -135,8 +135,7 @@ També conté els següents registres:
     - **Full-Duplex:** es pot parlar i escoltar alhora.
     - **Half-Duplex:** Walkie-Talkie.
 
-![serial chronogram](https://github.com/GarJor/CI/blob/master/Utilidades/serialcomunication.png)
-   
+![serial chronogram](https://github.com/GarJor/CI/blob/master/Utilidades/serialchronogram.png)
 ## Errors en la transmissio de dades
 + **Farming error:** Errors amb el start i el stop
 > **Error de Clock:** el maxim d'error que pot haver es del 10%. *(es un error de Farming)* 
@@ -144,7 +143,9 @@ També conté els següents registres:
 + **Pariry errors:** problemes de paritat
 
 > EXEMPLE:
+>
 >  Volem enviar a 38400 bps. Quin error tenim?
+>
 >    38400 = F<sub>osc</sub> / 64*(n+1)  --> n=2,25 --> 2
 
 
