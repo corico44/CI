@@ -109,4 +109,10 @@ També conté els següents registres:
  ![ADCON2](https://github.com/GarJor/CI/blob/master/Utilidades/ADCON2.png)
  ### Result Format (ADRESH | ADRESL)
   ![Result Format](https://github.com/GarJor/CI/blob/master/Utilidades/resultFormat.png)
- # **Tema 7:** Comunicacio serie
+ # **Tema 7:** Comunicació serie
+ ## Comunicació en sèrie
+ + S'utilitza un *shift register* (un registre que envia bits un a un) connectat a un altre *shift register*
+ + Cal sincronitzar el clock:
+    - Amb cable --> **Síncrona**
+    - sense cable --> **Asíncrona**
+> Alternativa -> *Comunicacio en paral·lel* : Conectats 8 pins amb 8 pins --> Molt costós
