@@ -15,8 +15,10 @@ INDEX
 + [**Tema 7: Comunicacio serie**](#tema-7-comunicació-serie)
   + [Comunicació en sèrie](#comunicació-en-sèrie)
   + [Linea Sèrie (RS-232)](#linea-sèrie-rs-232)
+      + [Transmissio](#transmissio)
+      + [Recepcio](#recepcio)
   + [Errors en la transmissio de dades](#errors-en-la-transmissio-de-dades)
-
+  + [Annexos Tema 7](#annexos-tema-7)
 
 
 # **Tema 6:** A/D
@@ -127,9 +129,9 @@ També conté els següents registres:
   - [RC6/TX1/CK1](#transmissio) i [RC7/RX1/DT1](#recepcio) (USART1)
   - [RD6/TX2/CK2](#transmissio) i [RD7/TX2/DT2](#recepcio) (USART2)
 + Els regitres associats al RS-232 son:
-  - Transmit status register (TXSTA) - Transmit register (TXREG)
-  - Receive status register (RCSTA) - Receive register (RCREG)
-  - Baud rate generate register (SPBRG)
+  - Transmit status register ([TXSTA](#txstax-i-rcstax)) - Transmit register (TXREG)
+  - Receive status register ([RCSTA](#txstax-i-rcstax)) - Receive register (RCREG)
+  - Baud rate generate register ([SPBRG](#spbrg-regiser))
     ![assoc. baud](https://github.com/GarJor/CI/blob/master/Utilidades/REGassociatedbBaud.png)
 > ALGUNS CONCEPTES:
 > - *Velocitat:* 2400, 4800, 9600... bps (bits per second a.k.a baud)
@@ -171,7 +173,10 @@ També conté els següents registres:
 >  Volem enviar a 38400 bps. Quin error tenim?
 >
 >    38400 = F<sub>osc</sub> / 64*(n+1)  --> n=2,25 --> 2
-
-
+## Annexos Tema 7:
+### TXSTAx i RCSTAx
+![TXSTAx i RCSTAx](https://github.com/GarJor/CI/blob/master/Utilidades/TXSTAx&RCSTAx.png)
+### SPBRG register
+![SPBRG](https://github.com/GarJor/CI/blob/master/Utilidades/SPBRG.png)
 
 
