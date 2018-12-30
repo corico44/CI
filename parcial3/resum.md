@@ -130,7 +130,7 @@ També conté els següents registres:
   - Transmit status register (TXSTA) - Transmit register (TXREG)
   - Receive status register (RCSTA) - Receive register (RCREG)
   - Baud rate generate register (SPBRG)
-    ![assoc. baud](https://github.com/GarJor/CI/blob/master/Utilidades/REGassociatedBaud.png)
+    ![assoc. baud](https://github.com/GarJor/CI/blob/master/Utilidades/REGassociatedbBaud.png)
 > ALGUNS CONCEPTES:
 > - *Velocitat:* 2400, 4800, 9600... bps (bits per second a.k.a baud)
 > - *Bits per byte:* 5, 6, 7 i 8
