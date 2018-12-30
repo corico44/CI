@@ -130,16 +130,20 @@ També conté els següents registres:
   - Transmit status register (TXSTA) - Transmit register (TXREG)
   - Receive status register (RCSTA) - Receive register (RCREG)
   - Baud rate generate register (SPBRG)
-    ![assoc. baud](https://github.com/GarJor/CI/blob/master/Utilidades/REGasociatedBaud.png)
+    ![assoc. baud](https://github.com/GarJor/CI/blob/master/Utilidades/REGassociatedBaud.png)
 > ALGUNS CONCEPTES:
-> *Velocitat:* 2400, 4800, 9600... bps (bits per second a.k.a baud)
-> *Bits per byte:* 5, 6, 7 i 8
-> *Paritat:* Detectar un error
-> *Bits d'Stop:* 1, 1+1/2, 2 --> Ens serveix per donar temps a màquines lentes.
-> La unitat de informacio es el caracter, no el byte.
-> El temps d'un bit es l'invers de la velocitat.
-+ Al principi de la comunicacio, quan esta parada, hi ha un bit a 1. Quan el posem a 0 (*bit de start*) es quan comença la comunicació; s'envien els 8 bits, el *bit de paritat* i un 1 que es el *bit d'Stop*
+> - *Velocitat:* 2400, 4800, 9600... bps (bits per second a.k.a baud)
+> - *Bits per byte:* 5, 6, 7 i 8
+> - *Paritat:* Detectar un error
+> - *Bits d'Stop:* 1, 1+1/2, 2 --> Ens serveix per donar temps a màquines lentes.
+> - La unitat de informacio es el caracter, no el byte.
+> - El temps d'un bit es l'invers de la velocitat.
+
+
++ Al principi de la comunicacio, quan esta parada, hi ha un bit a 1. Quan el posem a 0 (**bit de start**) es quan comença la comunicació; s'envien els 8 bits, el *bit de paritat* i un 1 que es el **bit d'Stop** :
+
 ![serial chronogram](https://github.com/GarJor/CI/blob/master/Utilidades/serialchronogram.png)
+
 + El **bit de paritat** serveix per datectar si hagut soroll que ha molestat a la conexio i es dona indicant la paritat (o no) del nombre de d'1s de la dada.
 
 #### Transmissio
