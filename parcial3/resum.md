@@ -121,16 +121,35 @@ També conté els següents registres:
 > Alternativa -> *Comunicacio en paral·lel* : Conectats 8 pins amb 8 pins --> Molt costós
 
 ## Linea Sèrie (RS-232)
-> **Velocitat:** 2400, 4800, 9600... bps (bits per second a.k.a baud)
-> **Bits per byte:** 5, 6, 7 i 8
-> **Paritat:** Detectar un error
-> **Bits d'Stop:** 1, 1+1/2, 2 --> Ens serveix per donar temps a màquines lentes
-> El temps d'un bit es l'invers de la velocitat
 
 
++ Els pins associoats al RS-232 son:
+  - [RC6/TX1/CK1](#transmissio) i [RC7/RX1/DT1](#recepcio) (USART1)
+  - [RD6/TX2/CK2](#transmissio) i [RD7/TX2/DT2](#recepcio) (USART2)
++ Els regitres associats al RS-232 son:
+  - Transmit status register (TXSTA) - Transmit register (TXREG)
+  - Receive status register (RCSTA) - Receive register (RCREG)
+  - Baud rate generate register (SPBRG)
+    ![assoc. baud](https://github.com/GarJor/CI/blob/master/Utilidades/REGasociatedBaud.png)
+> ALGUNS CONCEPTES:
+> *Velocitat:* 2400, 4800, 9600... bps (bits per second a.k.a baud)
+> *Bits per byte:* 5, 6, 7 i 8
+> *Paritat:* Detectar un error
+> *Bits d'Stop:* 1, 1+1/2, 2 --> Ens serveix per donar temps a màquines lentes.
+> La unitat de informacio es el caracter, no el byte.
+> El temps d'un bit es l'invers de la velocitat.
 + Al principi de la comunicacio, quan esta parada, hi ha un bit a 1. Quan el posem a 0 (*bit de start*) es quan comença la comunicació; s'envien els 8 bits, el *bit de paritat* i un 1 que es el *bit d'Stop*
 ![serial chronogram](https://github.com/GarJor/CI/blob/master/Utilidades/serialchronogram.png)
 + El **bit de paritat** serveix per datectar si hagut soroll que ha molestat a la conexio i es dona indicant la paritat (o no) del nombre de d'1s de la dada.
+
+#### Transmissio
+![EUSART transmit](https://github.com/GarJor/CI/blob/master/Utilidades/USARTtransmit.png)
+#### Recepcio
+![EUSART reception](https://github.com/GarJor/CI/blob/master/Utilidades/USARTrecieve.png)
+ > La recepcio comença un cop s'ha detectat el *bit de START*
++ La dada rebuda en el *Shift Register* es guarda en FIFO (RCREG)
++ Si es reben tres caracters en una fila, el FIFO es desborda -> [Overrun Error](#errors-en-la-transmissio-de-dades)
++ RCIF esta high fins que FIFO esta a buit 
 
 + La comunicacio pot ser:
     - **Full-Duplex:** es pot parlar i escoltar alhora.
