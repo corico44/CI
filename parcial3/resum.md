@@ -12,7 +12,7 @@ INDEX
       + [Teorema de Sannon-Nyquist](#teorema-de-shannon-nyquist)
       + [Teorema de l'Enginyer](#teorema-de-lenginyer)
   + [Annexos Tema 6](#annexos-tema-6)
-+ [**Tema 7: Comunicacio serie**](#tema-7-comunicacio-serie)
++ [**Tema 7: Comunicacio serie**](#tema-7-comunicació-serie)
 
 
 
@@ -116,3 +116,10 @@ També conté els següents registres:
     - Amb cable --> **Síncrona**
     - sense cable --> **Asíncrona**
 > Alternativa -> *Comunicacio en paral·lel* : Conectats 8 pins amb 8 pins --> Molt costós
+
+## Linea Sèrie (RS-232)
++ **velocitat:** 2400, 4800, 9600... bps (bits per second)
++ **Bits per byte:** 5, 6, 7 i 8
++ **Paritat:** Detectar un error
++ **Bits d'Stop:** 1, 1+1/2, 2 --> Ens serveix per donar temps a màquines lentes
+
