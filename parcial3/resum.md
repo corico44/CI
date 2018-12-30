@@ -92,6 +92,10 @@ També conté els següents registres:
     
     **1** (inicial) + **10** (bits) + **1** (final) = **12** clocks (*A/D te el seu propi temps de clock*) 
     
+ > Per tant el temps el calcularem: TAD = D/F<sub>osc</sub>  *on D es el divisor que s'aplica*.
+ 
+ > El temps total de la mostra sera TACQ+12*TAD
+    
  ## Cada quant temps he de convertir?
  
  #### Teorema de Fourier
@@ -121,9 +125,11 @@ També conté els següents registres:
     - Amb cable --> **Síncrona**
     - sense cable --> **Asíncrona**
 > Alternativa -> *Comunicacio en paral·lel* : Conectats 8 pins amb 8 pins --> Molt costós
++ La comunicacio pot ser:
+    - **Full-Duplex:** es pot parlar i escoltar alhora.
+    - **Half-Duplex:** Walkie-Talkie.
 
 ## Linea Sèrie (RS-232)
-
 
 + Els pins associoats al RS-232 son:
   - [RC6/TX1/CK1](#transmissio) i [RC7/RX1/DT1](#recepcio) (USART1)
@@ -144,6 +150,9 @@ També conté els següents registres:
 > - El temps d'un bit es l'invers de la velocitat.
 
 
+> Seran necessaris **3 cables** per tal de no fregir els components: **RxD, TxD i GND**
+
+
 + Al principi de la comunicacio, quan esta parada, hi ha un bit a 1. Quan el posem a 0 (**bit de start**) es quan comença la comunicació; s'envien els 8 bits, el *bit de paritat* i un 1 que es el **bit d'Stop** :
 
 ![serial chronogram](https://github.com/GarJor/CI/blob/master/Utilidades/serialchronogram.png)
@@ -159,9 +168,6 @@ També conté els següents registres:
 + Si es reben tres caracters en una fila, el FIFO es desborda -> [Overrun Error](#errors-en-la-transmissio-de-dades)
 + RCIF esta high fins que FIFO esta a buit 
 
-+ La comunicacio pot ser:
-    - **Full-Duplex:** es pot parlar i escoltar alhora.
-    - **Half-Duplex:** Walkie-Talkie.
 
 
 ## Errors en la transmissio de dades
