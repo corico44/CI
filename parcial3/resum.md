@@ -132,7 +132,9 @@ També conté els següents registres:
   - Transmit status register ([TXSTA](#txstax-i-rcstax)) - Transmit register (TXREG)
   - Receive status register ([RCSTA](#txstax-i-rcstax)) - Receive register (RCREG)
   - Baud rate generate register ([SPBRG](#spbrg-regiser))
-    ![assoc. baud](https://github.com/GarJor/CI/blob/master/Utilidades/REGassociatedbBaud.png)
+  
+  
+  ![assoc. baud](https://github.com/GarJor/CI/blob/master/Utilidades/REGassociatedbBaud.png)
 > ALGUNS CONCEPTES:
 > - *Velocitat:* 2400, 4800, 9600... bps (bits per second a.k.a baud)
 > - *Bits per byte:* 5, 6, 7 i 8
@@ -175,7 +177,7 @@ També conté els següents registres:
 >    38400 = F<sub>osc</sub> / 64*(n+1)  --> n=2,25 --> 2
 ## Annexos Tema 7:
 ### TXSTAx i RCSTAx
-![TXSTAx i RCSTAx](https://github.com/GarJor/CI/blob/master/Utilidades/TXSTAx&RCSTAx.png)
+![TXSTAx i RCSTAx](https://github.com/GarJor/CI/blob/master/Utilidades/TXSTAX%26RCSTAX.png)
 ### SPBRG register
 ![SPBRG](https://github.com/GarJor/CI/blob/master/Utilidades/SPBRG.png)
 
