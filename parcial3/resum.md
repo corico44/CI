@@ -13,7 +13,9 @@ INDEX
       + [Teorema de l'Enginyer](#teorema-de-lenginyer)
   + [Annexos Tema 6](#annexos-tema-6)
 + [**Tema 7: Comunicacio serie**](#tema-7-comunicació-serie)
-
+  + [Comunicació en sèrie](#comunicació-en-sèrie)
+  + [Linea Sèrie (RS-232)](#linea-sèrie-rs-232)
+  + [Errors en la transmissio de dades](#errors-en-la-transmissio-de-dades)
 
 
 
@@ -108,9 +110,10 @@ També conté els següents registres:
  ### ADCON2 register
  ![ADCON2](https://github.com/GarJor/CI/blob/master/Utilidades/ADCON2.png)
  ### Result Format (ADRESH | ADRESL)
-  ![Result Format](https://github.com/GarJor/CI/blob/master/Utilidades/resultFormat.png)
+ ![Result Format](https://github.com/GarJor/CI/blob/master/Utilidades/resultFormat.png)
  # **Tema 7:** Comunicació serie
  ## Comunicació en sèrie
+ ![serial chronogram](https://github.com/GarJor/CI/blob/master/Utilidades/serialchronogram.png)
  + S'utilitza un *shift register* (un registre que envia bits un a un) connectat a un altre *shift register*
  + Cal sincronitzar el clock:
     - Amb cable --> **Síncrona**
@@ -118,8 +121,32 @@ També conté els següents registres:
 > Alternativa -> *Comunicacio en paral·lel* : Conectats 8 pins amb 8 pins --> Molt costós
 
 ## Linea Sèrie (RS-232)
-+ **velocitat:** 2400, 4800, 9600... bps (bits per second)
-+ **Bits per byte:** 5, 6, 7 i 8
-+ **Paritat:** Detectar un error
-+ **Bits d'Stop:** 1, 1+1/2, 2 --> Ens serveix per donar temps a màquines lentes
+> **Velocitat:** 2400, 4800, 9600... bps (bits per second a.k.a baud)
+> **Bits per byte:** 5, 6, 7 i 8
+> **Paritat:** Detectar un error
+> **Bits d'Stop:** 1, 1+1/2, 2 --> Ens serveix per donar temps a màquines lentes
+> El temps d'un bit es l'invers de la velocitat
+
+
++ Al principi de la comunicacio, quan esta parada, hi ha un bit a 1. Quan el posem a 0 (*bit de start*) es quan comença la comunicació; s'envien els 8 bits, el *bit de paritat* i un 1 que es el *bit d'Stop*
++ El **bit de paritat** serveix per datectar si hagut soroll que ha molestat a la conexio i es dona indicant la paritat (o no) del nombre de d'1s de la dada.
+
++ La comunicacio pot ser:
+    - **Full-Duplex:** es pot parlar i escoltar alhora.
+    - **Half-Duplex:** Walkie-Talkie.
+
+![serial chronogram](https://github.com/GarJor/CI/blob/master/Utilidades/serialcomunication.png)
+   
+## Errors en la transmissio de dades
++ **Farming error:** Errors amb el start i el stop
+> **Error de Clock:** el maxim d'error que pot haver es del 10%. *(es un error de Farming)* 
++ **Receiver overrun:** Quan va massa rapid; la cpu no ha llegit les dades durant un temps
++ **Pariry errors:** problemes de paritat
+
+> EXEMPLE:
+>  Volem enviar a 38400 bps. Quin error tenim?
+>    38400 = F<sub>osc</sub> / 64*(n+1)  --> n=2,25 --> 2
+
+
+
 
