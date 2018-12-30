@@ -129,13 +129,14 @@ També conté els següents registres:
 
 
 + Al principi de la comunicacio, quan esta parada, hi ha un bit a 1. Quan el posem a 0 (*bit de start*) es quan comença la comunicació; s'envien els 8 bits, el *bit de paritat* i un 1 que es el *bit d'Stop*
+![serial chronogram](https://github.com/GarJor/CI/blob/master/Utilidades/serialchronogram.png)
 + El **bit de paritat** serveix per datectar si hagut soroll que ha molestat a la conexio i es dona indicant la paritat (o no) del nombre de d'1s de la dada.
 
 + La comunicacio pot ser:
     - **Full-Duplex:** es pot parlar i escoltar alhora.
     - **Half-Duplex:** Walkie-Talkie.
 
-![serial chronogram](https://github.com/GarJor/CI/blob/master/Utilidades/serialchronogram.png)
+
 ## Errors en la transmissio de dades
 + **Farming error:** Errors amb el start i el stop
 > **Error de Clock:** el maxim d'error que pot haver es del 10%. *(es un error de Farming)* 
