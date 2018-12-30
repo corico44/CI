@@ -131,7 +131,7 @@ També conté els següents registres:
 + Els regitres associats al RS-232 son:
   - Transmit status register ([TXSTA](#txstax-i-rcstax)) - Transmit register (TXREG)
   - Receive status register ([RCSTA](#txstax-i-rcstax)) - Receive register (RCREG)
-  - Baud rate generate register ([SPBRG](#spbrg-regiser))
+  - Baud rate generate register ([SPBRG](#spbrg-register))
   
   
   ![assoc. baud](https://github.com/GarJor/CI/blob/master/Utilidades/REGassociatedbBaud.png)
