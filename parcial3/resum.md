@@ -165,7 +165,8 @@ També conté els següents registres:
 + La comunicacio pot ser:
     - **Full-Duplex:** es pot parlar i escoltar alhora.
     - **Half-Duplex:** Walkie-Talkie.
-
+    
+[torna a l'index](#index)
 ## Linea Sèrie (RS-232)
 
 + Els pins associoats al RS-232 son:
@@ -206,18 +207,17 @@ També conté els següents registres:
 + RCIF esta high fins que FIFO esta a buit 
 
 
-
+[torna a l'index](#index)
 ## Errors en la transmissio de dades
 + **Farming error:** Errors amb el start i el stop
 > **Error de Clock:** el maxim d'error que pot haver es del 10%. *(es un error de Farming)* 
 + **Receiver overrun:** Quan va massa rapid; la cpu no ha llegit les dades durant un temps
 + **Pariry errors:** problemes de paritat
 
-> EXEMPLE:
->
->  Volem enviar a 38400 bps. Quin error tenim?
->
->    38400 = F<sub>osc</sub> / 64*(n+1)  --> n=2,25 --> 2
+
+
+
+[torna a l'index](#index)
 ## Exemples
 ### Calcul aproximacio optima velocitat
 > **Amb un Oscil·lador de 10MHz volem configurar la línia sèrie a 9600bps.
@@ -235,10 +235,23 @@ volem que sigui síncron o asíncron o volem usar el BGR en mode 8 o 16 bits. La
 ser necessàriament en 16 bits ja que n=259 no cap en 8
 > 9615,384 representa un error de menys de l’ 1% respecte 9600 per tant no representarà cap
 problema.
+
+[torna a l'index](#index)
+
+### Calcul error velocitat 
+>  **Volem enviar a 38400 bps. Quin error tenim?**
+>
+>    38400 = F<sub>osc</sub> / 64*(n+1)  --> n=2,25 --> 2
+
+[torna a l'index](#index)
 ## Annexos Tema 7:
 ### TXSTAx i RCSTAx
 ![TXSTAx i RCSTAx](https://github.com/GarJor/CI/blob/master/Utilidades/TXSTAX%26RCSTAX.png)
+
+[torna a l'index](#index)
 ### SPBRG register
 ![SPBRG](https://github.com/GarJor/CI/blob/master/Utilidades/SPBRG.png)
+
+[torna a l'index](#index)
 
 
