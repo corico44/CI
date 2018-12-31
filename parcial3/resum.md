@@ -20,6 +20,8 @@ INDEX
       + [Transmissio](#transmissio)
       + [Recepcio](#recepcio)
   + [Errors en la transmissio de dades](#errors-en-la-transmissio-de-dades)
+  + [Exemples](#exemples)
+      + [Calcul aproximacio optima velocitat](#calcul-aproximacio-optima-velocitat)
   + [Annexos Tema 7](#annexos-tema-7)
 
 
@@ -44,7 +46,7 @@ També conté els següents registres:
 
 
 
-
+[torna a l'index](#index)
 
 ## D/A (digit to analog converter -> DAC)
 ![versio flash](https://github.com/GarJor/CI/blob/master/Utilidades/DAC.png)
@@ -52,6 +54,7 @@ També conté els següents registres:
 
 - Cada bit de menor pes aporta menys voltatge a la sortida que els d'un pes més gran, ja que passa per mes resistencies. Cada bit te la meitat de pes del seguent.
 
+[torna a l'index](#index)
 ## A/D versio FLASH
 ![versio flash](https://github.com/GarJor/CI/blob/master/Utilidades/flash.png)
 
@@ -59,7 +62,7 @@ També conté els següents registres:
 - **Decoder:** Retorna un valor de 10 bits. Aquest valor permet saber on està el **tall** (el punt en el 'Digital Thermometer Code' que es pasa del 0 al 1)
 > - **Ref+ <= VDD** i  **Ref- >= GND** .
 
-
+[torna a l'index](#index)
 ## A/D barat
 
 ![aproximacio barata](https://github.com/GarJor/CI/blob/master/Utilidades/DAbarat.png)
@@ -73,6 +76,7 @@ També conté els següents registres:
 
 > Un cop el condensador esta carregat s'obre l'interruptor per evitar que el valor del Vin canvii.
 
+[torna a l'index](#index)
 ## A/D per cerca dicotomica (aproximacio successiva)
 
 ![aproximacio successiva](https://github.com/GarJor/CI/blob/master/Utilidades/seccesiveaproach.png)
@@ -83,6 +87,7 @@ També conté els següents registres:
 
 > El Vin tambe compta amb un circuit S/H 
 
+[torna a l'index](#index)
 ## Temps de conversio
 
 + Es el temps desde que entra una dada fins que acaba la seva conversió. Hi ha dos fases:
@@ -98,7 +103,8 @@ També conté els següents registres:
  > Per tant el temps el calcularem: TAD = D/F<sub>osc</sub>  *on D es el divisor que s'aplica*.
  
  > El temps total de la mostra sera TACQ+12*TAD
-    
+ 
+ [torna a l'index](#index)   
  ## Cada quant temps he de convertir?
  
  #### Teorema de Fourier
@@ -110,10 +116,12 @@ També conté els següents registres:
  + f<sub>mostreig</sub> > 2 * f<sub>max senyal</sub> 
  #### Teorema de l'Enginyer
  + f<sub>mostreig</sub> = 10 * f<sub>max senyal</sub> 
+ 
+ [torna a l'index](#index)
  ## Exemples
  #### Calcul de Vref- i Vref+ d'un conversor A/D
- > Un conversor AD de 10 bits llegeix el valor digital 255. Si Vss=0V, Vdd=5V, Fosc=8MHz, Vin
-(entrada a l’AD) és de 0,5V, quín valor tenen Vref- i Vref+ del conversor?
+ > **Un conversor AD de 10 bits llegeix el valor digital 255. Si Vss=0V, Vdd=5V, Fosc=8MHz, Vin
+(entrada a l’AD) és de 0,5V, quín valor tenen Vref- i Vref+ del conversor?**
 
 > ***valor digital*** = ***rang maxim digital*** * (***Vin*** - **Vref-**)/(**Vref+** - **Vref-**)
 
@@ -128,15 +136,24 @@ També conté els següents registres:
 > A partir de la formula trobem que:
 > **Vref-** = 0V, i **Vref+** = 2V, compleix les condicions.
 
+[torna a l'index](#index)
  ## Annexos Tema 6:
  ### ADCON0 register
  ![ADCON0](https://github.com/GarJor/CI/blob/master/Utilidades/ADCON0.png)
+ 
+ [torna a l'index](#index)
  ### ADCON1 register
  ![ADCON1](https://github.com/GarJor/CI/blob/master/Utilidades/ADCON1.png)
+ 
+ [torna a l'index](#index)
  ### ADCON2 register
  ![ADCON2](https://github.com/GarJor/CI/blob/master/Utilidades/ADCON2.png)
+ 
+ [torna a l'index](#index)
  ### Result Format (ADRESH | ADRESL)
  ![Result Format](https://github.com/GarJor/CI/blob/master/Utilidades/resultFormat.png)
+ 
+ [torna a l'index](#index)
  # **Tema 7:** Comunicació serie
  ## Comunicació en sèrie
  ![serial comunication](https://github.com/GarJor/CI/blob/master/Utilidades/serialcomunication.png)
@@ -201,6 +218,23 @@ També conté els següents registres:
 >  Volem enviar a 38400 bps. Quin error tenim?
 >
 >    38400 = F<sub>osc</sub> / 64*(n+1)  --> n=2,25 --> 2
+## Exemples
+### Calcul aproximacio optima velocitat
+> **Amb un Oscil·lador de 10MHz volem configurar la línia sèrie a 9600bps.
+Quina és la millor aproximació que podem tenir? Ens suposarà algun problema?** 
+> Hem de provar tots els escenaris, observant la [taula](#spbr-register):
+>
+> 8 bits: 9600 = 10MHz / (**64** (n+1)) -> n = 15,276 -> n= 15. La velocitat real és 9765,625 bps.
+>
+> 8 o 16: 9600 = 10MHz / (**16** (n+1)) -> n = 64,104 -> n= 64. La velocitat real és 9615,384 bps.
+>
+>8 o 16: 9600 = 10MHz / (**4** (n+1)) -> n = 259,417 -> n= 259. La velocitat real és 9615,384 bps.
+>
+> Qualsevol de les dues opcions darreres és equivalent, podrem triar una o altra depenent de si
+volem que sigui síncron o asíncron o volem usar el BGR en mode 8 o 16 bits. La darrera ha de
+ser necessàriament en 16 bits ja que n=259 no cap en 8
+> 9615,384 representa un error de menys de l’ 1% respecte 9600 per tant no representarà cap
+problema.
 ## Annexos Tema 7:
 ### TXSTAx i RCSTAx
 ![TXSTAx i RCSTAx](https://github.com/GarJor/CI/blob/master/Utilidades/TXSTAX%26RCSTAX.png)
