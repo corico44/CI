@@ -222,7 +222,7 @@ També conté els següents registres:
 ### Calcul aproximacio optima velocitat
 > **Amb un Oscil·lador de 10MHz volem configurar la línia sèrie a 9600bps.
 Quina és la millor aproximació que podem tenir? Ens suposarà algun problema?**  
-> Hem de provar tots els escenaris, observant la [taula](#spbr-register):  
+> Hem de provar tots els escenaris, observant la [taula](#spbrg-register):  
 > 8 bits: 9600 = 10MHz / (**64** (n+1)) -> n = 15,276 -> n= 15. La velocitat real és 9765,625 bps.
 >
 > 8 o 16: 9600 = 10MHz / (**16** (n+1)) -> n = 64,104 -> n= 64. La velocitat real és 9615,384 bps.
