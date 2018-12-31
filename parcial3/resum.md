@@ -2,8 +2,8 @@ INDEX
 ======
 + [**Tema 6: A/D**](#conversors-ad-adc)
   + [Conversors A/D](#conversors-ad-adc)
-  + [Versio FLASH](#versio-flash)
   + [Digit to analog converter (DAC)](#da-digit-to-analog-converter---dac)
+  + [A/D versio FLASH](#ad-versio-flash)
   + [A/D barat](#ad-barat)
   + [A/D per cerca dicotomica (aproximacio successiva)](#ad-per-cerca-dicotomica-aproximacio-successiva)
   + [Temps de conversio](#temps-de-conversio)
@@ -11,6 +11,8 @@ INDEX
       + [Teorema de Fourier](#teorema-de-fourier)
       + [Teorema de Sannon-Nyquist](#teorema-de-shannon-nyquist)
       + [Teorema de l'Enginyer](#teorema-de-lenginyer)
+	+ [Exemples](#exemples)
+			+	[Calcul de Vref- i Vref+ d'un conversor A/D](#calcul-de-vref--i-vref+-d'un-conversor-ad)
   + [Annexos Tema 6](#annexos-tema-6)
 + [**Tema 7: Comunicacio serie**](#tema-7-comunicació-serie)
   + [Comunicació en sèrie](#comunicació-en-sèrie)
@@ -40,13 +42,6 @@ També conté els següents registres:
 > + ANSELX per a la configuració de pins
 > + ADIF, ADIE i ADIP per a la AD interrupt  
 
-## Versio FLASH
-![versio flash](https://github.com/GarJor/CI/blob/master/Utilidades/flash.png)
-
-- **Comparador:** Dona 1 si Analog Input >= el que surt de la resistencia, es a dir, si Vin+ >= Vin- .
-- **Decoder:** Retorna un valor de 10 bits. Aquest valor permet saber on està el **tall** (el punt en el 'Digital Thermometer Code' que es pasa del 0 al 1)
-> - **Ref+ = VDD **  **Ref- = GND** (si el voltatge va de 0 a 5).
-
 
 
 
@@ -56,6 +51,14 @@ També conté els següents registres:
 ![versio flash](https://github.com/GarJor/CI/blob/master/Utilidades/DAconverter.png)
 
 - Cada bit de menor pes aporta menys voltatge a la sortida que els d'un pes més gran, ja que passa per mes resistencies. Cada bit te la meitat de pes del seguent.
+
+## A/D versio FLASH
+![versio flash](https://github.com/GarJor/CI/blob/master/Utilidades/flash.png)
+
+- **Comparador:** Dona 1 si Analog Input >= el que surt de la resistencia, es a dir, si Vin+ >= Vin- .
+- **Decoder:** Retorna un valor de 10 bits. Aquest valor permet saber on està el **tall** (el punt en el 'Digital Thermometer Code' que es pasa del 0 al 1)
+> - **Ref+ <= VDD** i  **Ref- >= GND** .
+
 
 ## A/D barat
 
@@ -107,7 +110,24 @@ També conté els següents registres:
  + f<sub>mostreig</sub> > 2 * f<sub>max senyal</sub> 
  #### Teorema de l'Enginyer
  + f<sub>mostreig</sub> = 10 * f<sub>max senyal</sub> 
- 
+ ## Exemples
+ #### Calcul de Vref- i Vref+ d'un conversor A/D
+ > Un conversor AD de 10 bits llegeix el valor digital 255. Si Vss=0V, Vdd=5V, Fosc=8MHz, Vin
+(entrada a l’AD) és de 0,5V, quín valor tenen Vref- i Vref+ del conversor?
+
+> ***valor digital*** = ***rang maxim digital*** * (***Vin*** - **Vref-**)/(**Vref+** - **Vref-**)
+
+> Substituim:
+>
+>	255 = 1023*(0.5-**Vref-**)/(**Vref+** - **Vref-**)
+>
+> *Nota: El rang maxim es 1023 ja que el conversor ens dona el valor digital en 10 bits --> 2<sup>10</sup> - 1* .
+>
+> *Nota2:  Hi ha un interval de solucions pero hem de tenir en compte que **Vref-** ha de ser >=  ***Vss*** i < ***Vin*** .*
+>
+> A partir de la formula trobem que:
+> **Vref-** = 0V, i **Vref+** = 2V, compleix les condicions.
+
  ## Annexos Tema 6:
  ### ADCON0 register
  ![ADCON0](https://github.com/GarJor/CI/blob/master/Utilidades/ADCON0.png)
