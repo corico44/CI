@@ -23,6 +23,7 @@ INDEX
   + [Serial Peripheral interface (SPI)](#serial-peripheral-interface-spi)
   + [Modul MSSP](#modul-mssp)
       + [El mode SPI](#el-mode-spi-mssp-module)
+      + [Operacio SPI](#operacio-spi)
   + [Exemples](#exemples)
       + [Calcul aproximacio optima velocitat](#calcul-aproximacio-optima-velocitat)
   + [Annexos Tema 7](#annexos-tema-7)
