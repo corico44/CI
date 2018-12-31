@@ -133,7 +133,7 @@ També conté els següents registres:
 >
 > *Nota2:  Hi ha un interval de solucions pero hem de tenir en compte que **Vref-** ha de ser >=  ***Vss*** i < ***Vin*** .*
 >
-> A partir de la formula trobem que:
+> A partir de la formula trobem que:  
 > **Vref-** = 0V, i **Vref+** = 2V, compleix les condicions.
 
 [torna a l'index](#index)
@@ -221,9 +221,8 @@ També conté els següents registres:
 ## Exemples
 ### Calcul aproximacio optima velocitat
 > **Amb un Oscil·lador de 10MHz volem configurar la línia sèrie a 9600bps.
-Quina és la millor aproximació que podem tenir? Ens suposarà algun problema?** 
-> Hem de provar tots els escenaris, observant la [taula](#spbr-register):
->
+Quina és la millor aproximació que podem tenir? Ens suposarà algun problema?**  
+> Hem de provar tots els escenaris, observant la [taula](#spbr-register):  
 > 8 bits: 9600 = 10MHz / (**64** (n+1)) -> n = 15,276 -> n= 15. La velocitat real és 9765,625 bps.
 >
 > 8 o 16: 9600 = 10MHz / (**16** (n+1)) -> n = 64,104 -> n= 64. La velocitat real és 9615,384 bps.
