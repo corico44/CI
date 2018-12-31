@@ -20,6 +20,7 @@ INDEX
       + [Transmissio](#transmissio)
       + [Recepcio](#recepcio)
   + [Errors en la transmissio de dades](#errors-en-la-transmissio-de-dades)
+  + [Serial Peripheral interface (SPI)](#serial=peripheral-interface-spi)
   + [Exemples](#exemples)
       + [Calcul aproximacio optima velocitat](#calcul-aproximacio-optima-velocitat)
   + [Annexos Tema 7](#annexos-tema-7)
@@ -215,8 +216,31 @@ També conté els següents registres:
 + **Pariry errors:** problemes de paritat
 
 
+[torna a l'index](#index)
+## Serial Peripheral interface (SPI)
++ El bus SPI és un estàndard **síncron** d'enllaços de dades en sèrie que opera en mode **full duplex**.
++ Els dispositius es comuniquen en mode **master/slave**. On el dispositiu *master* inicialitza el marc de dades.
++ Es permeten multiples dispositius *slave* amb lineas individuals de seleccio de *salve*: (chip select)
+![esquema SPI](https://github.com/GarJor/CI/blob/master/Utilidades/SPIm-s.png)
+[torna a l'index](#index)
+### Modul MSSP
++ Dos modes de operacio:
+    - SPI
+    - Inter-integrated circuit (I2C)
+    > Els dos modes no poden estar actius alhora ja que comperteixen els mateixos pins
++ pot interactuar amb *EEPROM serial, shift registers, display drivers,
+A/D converters, D/A converters, sensors digitals de temperatura , time-of-day
+chips, etc.*
++ Els dispositius es divideixen en master i slave (en qualsevol dels dos modes d'operacio)
++ El modul utilitza **3 pins**:
+    - Serial data out (*SDO*)—RC5/SDO
+    - Serial data in (*SDI*)—RC4/SDI/SDA
+    - Serial clock (*SCK*)—RC3/SCK/LVDIN
+    > un 4rt pin (*SS*) pot ser utilitzat en el mode slave  
+       
+[torna a l'index](#index)
 
-
+#### El mode SPI
 [torna a l'index](#index)
 ## Exemples
 ### Calcul aproximacio optima velocitat
