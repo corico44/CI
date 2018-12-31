@@ -254,7 +254,8 @@ chips, etc.*
     - Serial receive/transmit buffer (SSPBUF)
     - MSSP shift register (SSPSR)
     > aquest ultim no es accesible directament
-    
+ + **una escritura a SSPBUF escriura tambe a SSPSR**  
+ 
 [torna a l'index](#index)
 ## Exemples
 ### Calcul aproximacio optima velocitat
