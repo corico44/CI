@@ -248,7 +248,7 @@ chips, etc.*
 + 8 bits de dades son intercanviats de forma sincrona en una operacio
 + En **slave mode** els 4 senyals son utilitzats *(SDO, SDI, SCK, SS)*
 + EN **master mode** el pin *SS* no es necessari.
-+ Els registres per a SPI mode son:
++ Els registres per a la [operacio SPI](#operacio-spi) son:
     - MSSP control register 1 (SSPCON1)
     - MSSP status register (SSPSTAT)
     - Serial receive/transmit buffer (SSPBUF)
@@ -256,6 +256,14 @@ chips, etc.*
     > aquest ultim no es accesible directament
  + **una escritura a SSPBUF escriura tambe a SSPSR**  
  
+[torna a l'index](#index)
+#### Operacio SPI
+![operacio SPI](https://github.com/GarJor/CI/blob/master/Utilidades/spiOperation.png)  
+> Es mostra una simplificacio del circuit de coneccio entre un SPI master i un slave. (Conceptualment es un *shift register* de 16 bits dividit en dues parts.)
++
++
++
++
 [torna a l'index](#index)
 ## Exemples
 ### Calcul aproximacio optima velocitat
