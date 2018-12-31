@@ -20,7 +20,9 @@ INDEX
       + [Transmissio](#transmissio)
       + [Recepcio](#recepcio)
   + [Errors en la transmissio de dades](#errors-en-la-transmissio-de-dades)
-  + [Serial Peripheral interface (SPI)](#serial=peripheral-interface-spi)
+  + [Serial Peripheral interface (SPI)](#serial-peripheral-interface-spi)
+  + [Modul MSSP](#modul-mssp)
+      + [El mode SPI](#el-mode-spi-mssp-module)
   + [Exemples](#exemples)
       + [Calcul aproximacio optima velocitat](#calcul-aproximacio-optima-velocitat)
   + [Annexos Tema 7](#annexos-tema-7)
@@ -221,9 +223,10 @@ També conté els següents registres:
 + El bus SPI és un estàndard **síncron** d'enllaços de dades en sèrie que opera en mode **full duplex**.
 + Els dispositius es comuniquen en mode **master/slave**. On el dispositiu *master* inicialitza el marc de dades.
 + Es permeten multiples dispositius *slave* amb lineas individuals de seleccio de *salve*: (chip select)
-![esquema SPI](https://github.com/GarJor/CI/blob/master/Utilidades/SPIm-s.png)
+![esquema SPI](https://github.com/GarJor/CI/blob/master/Utilidades/SPIm-s.png)  
+
 [torna a l'index](#index)
-### Modul MSSP
+## Modul MSSP
 + Dos modes de operacio:
     - SPI
     - Inter-integrated circuit (I2C)
@@ -240,7 +243,18 @@ chips, etc.*
        
 [torna a l'index](#index)
 
-#### El mode SPI
+#### El mode SPI (MSSP module)
+![mode SPI](https://github.com/GarJor/CI/blob/master/Utilidades/MSSPspimode.png)  
++ 8 bits de dades son intercanviats de forma sincrona en una operacio
++ En **slave mode** els 4 senyals son utilitzats *(SDO, SDI, SCK, SS)*
++ EN **master mode** el pin *SS* no es necessari.
++ Els registres per a SPI mode son:
+    - MSSP control register 1 (SSPCON1)
+    - MSSP status register (SSPSTAT)
+    - Serial receive/transmit buffer (SSPBUF)
+    - MSSP shift register (SSPSR)
+    > aquest ultim no es accesible directament
+    
 [torna a l'index](#index)
 ## Exemples
 ### Calcul aproximacio optima velocitat
