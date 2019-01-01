@@ -265,9 +265,14 @@ chips, etc.*
 + **Per enviar dades** al slave, master escriu en el *SSPBUF*, i provoca 8 clocks amb els que la dada es enviada al slave (s'utilitza un *shift register* que envia bit a bit cada clock). SSPIF i BF estan a 1.
 + **Per llegir dades** del slave, el master escriu al *SSPBUF* per provocar els 8 clocks que posaran les dades en ell, i seguidament fa una lectura del *SSPBUF*
 
-+ En el master mode, el SPI clock rate pot ser:  
-![SPI clock Rate](https://github.com/GarJor/CI/blob/master/Utilidades/SPIclockRate.png)  
-+ Per configurar-ho s'usen els 4 bits de menor pes del registre SSPCON1.
++ En el master mode, el SPI clock rate pot ser:   
+![SPI clock Rate](https://github.com/GarJor/CI/blob/master/Utilidades/SPIclockRate.png)   
++ Per configurar-ho s'usen els 4 bits de menor pes del registre SSPCON1.  
+#### Clock Edge
+
++ Quan un modul SPI no esta transmitin dades se li diu **idle**
+> Es pot configurar el senyal SCK per ser *idle high* o *idle low*
++ Si posem el bit CKP del registre SSPCON1 a 1, el senya SCK sera idle high.
 [torna a l'index](#index)
 ## Exemples
 ### Calcul aproximacio optima velocitat
@@ -305,4 +310,6 @@ problema.
 [torna a l'index](#index)
 ### SSPSTAT i SPPCON1 (SPI mode)
 
-![SSPSTAT i SPPCON1](https://github.com/GarJor/CI/blob/master/Utilidades/SPP-STAT-CON1.png)
+![SSPSTAT i SPPCON1](https://github.com/GarJor/CI/blob/master/Utilidades/SSP-STAT-CON1.png)
+
+[torna a l'index](#index)
