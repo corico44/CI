@@ -261,10 +261,13 @@ chips, etc.*
 #### Operacio SPI
 ![operacio SPI](https://github.com/GarJor/CI/blob/master/Utilidades/spiOperation.png)  
 > Es mostra una simplificacio del circuit de coneccio entre un SPI master i un slave. (Conceptualment es un *shift register* de 16 bits dividit en dues parts.)
-+
-+
-+
-+
+> El pin SDO del masater esta contectat amb el SDI del slave, i a l'inversa; el pin SDI del master esta conectaat amb el SDO del master
++ **Per enviar dades** al slave, master escriu en el *SSPBUF*, i provoca 8 clocks amb els que la dada es enviada al slave (s'utilitza un *shift register* que envia bit a bit cada clock). SSPIF i BF estan a 1.
++ **Per llegir dades** del slave, el master escriu al *SSPBUF* per provocar els 8 clocks que posaran les dades en ell, i seguidament fa una lectura del *SSPBUF*
+
++ En el master mode, el SPI clock rate pot ser:  
+![SPI clock Rate](https://github.com/GarJor/CI/blob/master/Utilidades/SPIclockRate.png)  
++ Per configurar-ho s'usen els 4 bits de menor pes del registre SSPCON1.
 [torna a l'index](#index)
 ## Exemples
 ### Calcul aproximacio optima velocitat
@@ -300,5 +303,6 @@ problema.
 ![SPBRG](https://github.com/GarJor/CI/blob/master/Utilidades/SPBRG.png)
 
 [torna a l'index](#index)
+### SSPSTAT i SPPCON1 (SPI mode)
 
-
+![SSPSTAT i SPPCON1](https://github.com/GarJor/CI/blob/master/Utilidades/SPP-STAT-CON1.png)
