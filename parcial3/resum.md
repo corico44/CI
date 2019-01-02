@@ -24,6 +24,7 @@ INDEX
   + [Modul MSSP](#modul-mssp)
       + [El mode SPI](#el-mode-spi-mssp-module)
       + [Operacio SPI](#operacio-spi)
+      + [Clock edge](#clock-edge)
   + [Exemples](#exemples)
       + [Calcul aproximacio optima velocitat](#calcul-aproximacio-optima-velocitat)
   + [Annexos Tema 7](#annexos-tema-7)
@@ -244,21 +245,21 @@ chips, etc.*
        
 [torna a l'index](#index)
 
-#### El mode SPI (MSSP module)
+### El mode SPI (MSSP module)
 ![mode SPI](https://github.com/GarJor/CI/blob/master/Utilidades/MSSPspimode.png)  
 + 8 bits de dades son intercanviats de forma sincrona en una operacio
 + En **slave mode** els 4 senyals son utilitzats *(SDO, SDI, SCK, SS)*
 + EN **master mode** el pin *SS* no es necessari.
 + Els registres per a la [operacio SPI](#operacio-spi) son:
-    - MSSP control register 1 (SSPCON1)
-    - MSSP status register (SSPSTAT)
+    - MSSP control register 1 ([SSPCON1](#sspstat-i-sppcon1-spi-mode) )
+    - MSSP status register ([SSPSTAT](#sspstat-i-sppcon1-spi-mode))
     - Serial receive/transmit buffer (SSPBUF)
     - MSSP shift register (SSPSR)
     > aquest ultim no es accesible directament
  + **una escritura a SSPBUF escriura tambe a SSPSR**  
  
 [torna a l'index](#index)
-#### Operacio SPI
+### Operacio SPI
 ![operacio SPI](https://github.com/GarJor/CI/blob/master/Utilidades/spiOperation.png)  
 > Es mostra una simplificacio del circuit de coneccio entre un SPI master i un slave. (Conceptualment es un *shift register* de 16 bits dividit en dues parts.)
 > El pin SDO del masater esta contectat amb el SDI del slave, i a l'inversa; el pin SDI del master esta conectaat amb el SDO del master
@@ -268,11 +269,20 @@ chips, etc.*
 + En el master mode, el SPI clock rate pot ser:   
 ![SPI clock Rate](https://github.com/GarJor/CI/blob/master/Utilidades/SPIclockRate.png)   
 + Per configurar-ho s'usen els 4 bits de menor pes del registre SSPCON1.  
-#### Clock Edge
+### Clock Edge
 
 + Quan un modul SPI no esta transmitin dades se li diu **idle**
 > Es pot configurar el senyal SCK per ser *idle high* o *idle low*
-+ Si posem el bit CKP del registre SSPCON1 a 1, el senya SCK sera idle high.
++ Si posem el **bit CKP** del registre [SSPCON1](#sspstat-i-sppcon1-spi-mode) a 1, el senya SCK sera idle high.  
++ El **bit CKE** del registre [SSPSTAT](#sspstat-i-sppcon1-spi-mode) i el bit CKP del SSPCON1 configuren junts el *clock edge* de la senyal SCK:
+![Clock Edge](https://github.com/GarJor/CI/blob/master/Utilidades/ClockEdge.png)    
++ Es pot optar per la  meitat o el final del temps d'un bit per a mostrejar les dades entrants; cuan el **bit SMP** del registre [SSPSTAT](#sspstat-i-sppcon1-spi-mode) està a 1 les dades entrants son mostrejades al final del temps, si està a la meitat.
+
+[torna a l'index](#index)
+### Metodes de Coneccío
+![Clock Edge](https://github.com/GarJor/CI/blob/master/Utilidades/connectionSSP0.png)
+![Clock Edge](https://github.com/GarJor/CI/blob/master/Utilidades/connectionSSP1.png)
+
 [torna a l'index](#index)
 ## Exemples
 ### Calcul aproximacio optima velocitat
