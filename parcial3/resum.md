@@ -280,8 +280,8 @@ chips, etc.*
 
 [torna a l'index](#index)
 ### Metodes de Coneccío
-![Clock Edge](https://github.com/GarJor/CI/blob/master/Utilidades/connectionSSP0.png)
-![Clock Edge](https://github.com/GarJor/CI/blob/master/Utilidades/connectionSSP1.png)
+![Clock Edge](https://github.com/GarJor/CI/blob/master/Utilidades/connectionSPI0.png)
+![Clock Edge](https://github.com/GarJor/CI/blob/master/Utilidades/connectionSPI1.png)
 
 [torna a l'index](#index)
 ## Exemples
