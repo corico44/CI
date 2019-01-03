@@ -279,11 +279,19 @@ chips, etc.*
 + Es pot optar per la  meitat o el final del temps d'un bit per a mostrejar les dades entrants; cuan el **bit SMP** del registre [SSPSTAT](#sspstat-i-sppcon1-spi-mode) està a 1 les dades entrants son mostrejades al final del temps, si està a la meitat.
 
 [torna a l'index](#index)
-### Metodes de Coneccío
+### Metodes de Conecció
 ![Clock Edge](https://github.com/GarJor/CI/blob/master/Utilidades/connectionSPI0.png)
 ![Clock Edge](https://github.com/GarJor/CI/blob/master/Utilidades/connectionSPI1.png)
 
 [torna a l'index](#index)
+## Universal serial bus (USB)
+ 
++ A l'entrada hi ha un restador. Resten 
+#### Com funciona
+
++ Amb un pull up a D+ o D- al connectar amb un ordinador es permet saber a quina velocitat es vol conectar i se sap que esta conectat
++ Te una paraula d'entrada, no un bit. De final te dos bits amb D+ i D- a 0.
+
 ## Exemples
 ### Calcul aproximacio optima velocitat
 > **Amb un Oscil·lador de 10MHz volem configurar la línia sèrie a 9600bps.
