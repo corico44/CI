@@ -291,7 +291,13 @@ chips, etc.*
 
 + Amb un pull up a D+ o D- al connectar amb un ordinador es permet saber a quina velocitat es vol conectar i se sap que esta conectat
 + Te una paraula d'entrada, no un bit. De final te dos bits amb D+ i D- a 0.
-
++ La codificació USB imposa que cada sis uns consecutius s'insereixi un zero (anomenat stuffed
+bit). Llavors el temps que es triga en transmetre depèn del nombre de uns consecutius de les
+dades
+> EXEMPLE:  
+> 64 Bytes en el camp de dades.  
+> Si tots són uns tindrem (64*8)/6 *stuffed bits* + 64*8 bits.  
+> En canvi si tots son zeros nomes tindrem 64*8 bits  
 ## Exemples
 ### Calcul aproximacio optima velocitat
 > **Amb un Oscil·lador de 10MHz volem configurar la línia sèrie a 9600bps.
