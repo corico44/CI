@@ -279,7 +279,7 @@ chips, etc.*
 + Es pot optar per la  meitat o el final del temps d'un bit per a mostrejar les dades entrants; cuan el **bit SMP** del registre [SSPSTAT](#sspstat-i-sppcon1-spi-mode) està a 1 les dades entrants son mostrejades al final del temps, si està a la meitat.
 
 [torna a l'index](#index)
-### Metodes de Conecció
+### Metodes de Conexió
 ![Clock Edge](https://github.com/GarJor/CI/blob/master/Utilidades/connectionSPI0.png)
 ![Clock Edge](https://github.com/GarJor/CI/blob/master/Utilidades/connectionSPI1.png)
 
